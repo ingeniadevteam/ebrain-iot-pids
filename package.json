@@ -11,6 +11,10 @@
     "node-pid-controller": "^1.0.1"
   },
   "keywords": [],
-  "author": "",
-  "license": "ISC"
+  "author": "Víctor Navarro <v.navarro@camposcorporacion.com>",
+  "license": "ISC",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ingeniadevteam/ebrain-iot-pids.git"
+  }
 }
