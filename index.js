@@ -1,7 +1,7 @@
 "use strict";
 
 const { readFileSync } = require ( 'fs' );
-const Controller = require('node-pid-controller');
+const PID = require('./lib/pid');
 const validate = require('./validation');
 
 module.exports = async (app) => {
@@ -13,10 +13,9 @@ module.exports = async (app) => {
             app.pids.config = await validate(JSON.parse(configFile));
             
             for (const pid of app.pids.config) {
-                app.pids.module[pid.name] = new Controller(pid);
+                app.pids.module[pid.name] = new PID(pid);
             }
         } catch (error) {
-            console.log(error);
             app.logger.error(`pid ${error.message}`);
         }
     }

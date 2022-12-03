@@ -5,10 +5,15 @@ const joi = require('joi');
 // the validation schema
 const pidSchema = joi.object({
   name: joi.string(),               // Pid name
-  k_p: joi.number().default(0),     // Proportional gain
-  k_i: joi.number().default(0),     // Integral gain
-  k_d: joi.number().default(0),     // Derivative gain
-  dt: joi.number().default(1000),   // Time interval in milliseconds
+  kp: joi.number().default(0.5),    // Proportional gain
+  ki: joi.number().default(0.05),   // Integral gain
+  kd: joi.number().default(0.1),    // Derivative gain
+  dt: joi.number().default(5000),   // Time interval in milliseconds,
+  initial: joi.number().default(5000), // Initial value
+  target:  joi.number().default(100),  // Target value
+  u_bound: joi.number().default(5000), // max output value
+  l_bound: joi.number().default(5000), // min output value
+  reverse: joi.number().default(5000), // reverse mode
 }).unknown().required();
 
 const pidsSchema = joi.array().items(pidSchema);

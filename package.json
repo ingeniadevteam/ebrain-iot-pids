@@ -1,14 +1,13 @@
 {
   "name": "@clysema/ebrain-iot-pids",
-  "version": "1.0.0",
+  "version": "2.0.0",
   "description": "",
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "dependencies": {
-    "joi": "^17.4.2",
-    "node-pid-controller": "^1.0.1"
+    "joi": "^17.4.2"
   },
   "keywords": [],
   "author": "Víctor Navarro <v.navarro@camposcorporacion.com>",
