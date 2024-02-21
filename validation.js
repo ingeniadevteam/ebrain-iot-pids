@@ -13,7 +13,7 @@ const pidSchema = joi.object({
   target:  joi.number().default(100),  // Target value
   u_bound: joi.number().default(100),  // max output value
   l_bound: joi.number().default(0),    // min output value
-  reverse: joi.number().default(true), // reverse mode
+  reverse: joi.boolean().default(true), // reverse mode
 }).unknown().required();
 
 const pidsSchema = joi.array().items(pidSchema);
